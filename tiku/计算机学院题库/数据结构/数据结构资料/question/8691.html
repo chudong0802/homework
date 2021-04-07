@@ -1,0 +1,82 @@
+<html><head></head><body>
+<STYLE>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</STYLE>
+
+<STYLE>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</STYLE>
+
+<P><!--StartFragment-->
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><SPAN style="FONT-FAMILY: 宋体; mso-ascii-font-family: ''Times New Roman''; mso-hansi-font-family: ''Times New Roman''">在带头结点的单链表中。插入一个新结点的算法</SPAN></B></P>
+<P class=MsoNormal><SPAN lang=EN-US>Status ListInsert_L(LinkList &amp;L,int i, Elemtype e) </SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 125%"><SPAN lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;</SPAN>{<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// </SPAN><SPAN style="FONT-FAMILY: 宋体; mso-ascii-font-family: ''Times New Roman''; mso-hansi-font-family: ''Times New Roman''">在带头结点的单链表中的第</SPAN><SPAN lang=EN-US>i</SPAN><SPAN style="FONT-FAMILY: 宋体; mso-ascii-font-family: ''Times New Roman''; mso-hansi-font-family: ''Times New Roman''">个结点之前插入值为</SPAN><SPAN lang=EN-US>e</SPAN><SPAN style="FONT-FAMILY: 宋体; mso-ascii-font-family: ''Times New Roman''; mso-hansi-font-family: ''Times New Roman''">的新结点</SPAN></P>
+<P class=MsoNormal style="TEXT-INDENT: 21pt; LINE-HEIGHT: 125%"><SPAN lang=EN-US>p=L</SPAN><SPAN style="FONT-FAMILY: 宋体; mso-ascii-font-family: ''Times New Roman''; mso-hansi-font-family: ''Times New Roman''">；</SPAN></P>
+<P class=MsoNormal style="TEXT-INDENT: 21pt; LINE-HEIGHT: 125%"><SPAN lang=EN-US>j=0</SPAN><SPAN style="FONT-FAMILY: 宋体; mso-ascii-font-family: ''Times New Roman''; mso-hansi-font-family: ''Times New Roman''">；</SPAN></P>
+<P class=MsoNormal style="TEXT-INDENT: 21pt; LINE-HEIGHT: 125%"><SPAN lang=EN-US>while(p&amp;&amp;j<I-1) p="p-" {>next</SPAN><SPAN style="FONT-FAMILY: 宋体; mso-ascii-font-family: ''Times New Roman''; mso-hansi-font-family: ''Times New Roman''">；</SPAN><SPAN lang=EN-US>j++</SPAN><SPAN style="FONT-FAMILY: 宋体; mso-ascii-font-family: ''Times New Roman''; mso-hansi-font-family: ''Times New Roman''">；</SPAN><SPAN lang=EN-US>} <SPAN style="mso-spacerun: yes">&nbsp;&nbsp;</SPAN>// </SPAN><SPAN style="FONT-FAMILY: 宋体; mso-ascii-font-family: ''Times New Roman''; mso-hansi-font-family: ''Times New Roman''">在链表中寻找第</SPAN><SPAN lang=EN-US>i-1</SPAN><SPAN style="FONT-FAMILY: 宋体; mso-ascii-font-family: ''Times New Roman''; mso-hansi-font-family: ''Times New Roman''">个结点</SPAN></P>
+<P class=MsoNormal style="TEXT-INDENT: 21pt; LINE-HEIGHT: 125%"><SPAN lang=EN-US>if(!p||j>i-1) return ERROR;<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>// i</SPAN><SPAN style="FONT-FAMILY: 宋体; mso-ascii-font-family: ''Times New Roman''; mso-hansi-font-family: ''Times New Roman''">超出链表范围</SPAN></P>
+<P class=MsoNormal style="MARGIN-LEFT: 21pt; TEXT-INDENT: 21pt; LINE-HEIGHT: 125%"><SPAN lang=EN-US>s=(LinkList)malloc(sizeof(LNode));<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>//</SPAN><SPAN style="FONT-FAMILY: 宋体; mso-ascii-font-family: ''Times New Roman''; mso-hansi-font-family: ''Times New Roman''">生成新结点</SPAN></P>
+<P class=MsoNormal style="MARGIN-LEFT: 21pt; TEXT-INDENT: 21pt; LINE-HEIGHT: 150%"><SPAN lang=EN-US>s->data=e</SPAN><SPAN style="FONT-FAMILY: 宋体; mso-ascii-font-family: ''Times New Roman''; mso-hansi-font-family: ''Times New Roman''">；</SPAN><SPAN lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp; </SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN-LEFT: 21pt; TEXT-INDENT: 21pt; LINE-HEIGHT: 150%"><U><SPAN lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN></U></P>
+<P class=MsoNormal style="MARGIN-LEFT: 21pt; TEXT-INDENT: 21pt; LINE-HEIGHT: 150%"><U><SPAN lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN></U></P>
+<P class=MsoNormal style="MARGIN-LEFT: 21pt; TEXT-INDENT: 21pt; LINE-HEIGHT: 150%"><SPAN lang=EN-US>return OK;</SPAN></P>
+<P class=MsoNormal style="TEXT-INDENT: 10.5pt; LINE-HEIGHT: 150%; mso-char-indent-count: 1.0"><SPAN lang=EN-US>} </SPAN></P><!--EndFragment-->&nbsp; 
+<P></P></body></html>

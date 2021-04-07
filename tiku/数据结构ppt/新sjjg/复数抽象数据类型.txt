@@ -1,0 +1,94 @@
+数据结构之抽象数据类型－复数四则运算2007-04-28 16:06[ 复数 ADT 的描述 ]
+　 ADT complex{ 
+　　　 数据对象： D={ c1,c2 | c1,c2 ∈ FloatSet }
+　　　 数据关系： R={ <c1,c2>}
+　　　 基本操作：创建一个复数　　　　 creat(a);
+　　　　　　　　 输出一个复数　　　　 outputc(a);
+　　　　　　　　 求两个复数相加之和　 add(a,b);
+　　　　　　　　 求两个复数相减之差　 sub(a,b);
+　　　　　　　　 求两个复数相乘之积　 chengji(a,b);
+　　　　　　　　 等等 ;
+} ADT complex;
+实现复数 ADT 可以使用面向过程的程序设计方法，也可以用面向对象程序设计方法。
+[复数ADT实现的面向过程C语言源程序]-complex.h
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct Complex
+{
+float real; 
+float image;
+}Complex; 
+
+void CreatComplex(Complex& c,float a,float b); 
+
+void AddComplex(Complex& sum,Complex c1,Complex c2 ); 
+
+void Subtract_C(Complex& Sub,Complex c1,Complex c2 ); 
+
+void Multiple_C(Complex& product,Complex c1,Complex c2 ); 
+
+void Print_C(Complex c); 
+
+void CreatComplex(Complex& c,float a,float b)
+{
+c.real = a;
+c.image = b;
+} 
+
+void AddComplex(Complex& sum,Complex c1,Complex c2)
+{
+sum.real = c1.real + c2.real ;
+sum.image = c1.image   + c2.image   ;
+} 
+
+
+void   Subtract_C(Complex& Sub,Complex c1,Complex c2 )
+{
+Sub.real = c1.real -c2.real ;
+Sub.image = c1.image - c2.image ;
+}
+
+void Multiple_C(Complex& product,Complex c1,Complex c2 )
+{
+product.real = c1.real * c2.real - c1.image * c2.image ;
+
+product.image = c1.real * c2.image + c1.image * c2.real ;
+}
+
+
+void Print_C(Complex c)
+{
+if (c.image == 0.0)
+   printf("%5.2f\n",c.real );
+else
+   printf("%5.2f+%5.2fi\n",c.real ,c.image );
+if(c.real==0.0)
+   printf("%5.2fi\n",c.image);
+}
+complex.cpp代码：
+#include "complex.h"
+#include <stdio.h>
+void main()
+{
+float a,b,c,d;
+Complex   c1,c2,sum,Sub,Prod;
+
+scanf("%f%f%f%f",&a,&b,&c,&d);
+    
+CreatComplex(c1,a,b);
+
+Print_C(c1);
+
+CreatComplex(c2,c,d);
+Print_C(c2);
+
+AddComplex(sum,c1,c2);
+Print_C(sum);
+
+Subtract_C(Sub,c1,c2);
+Print_C(Sub);
+
+Multiple_C(Prod,c1,c2);
+Print_C(Prod);
+}
+ 
